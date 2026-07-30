@@ -31,8 +31,8 @@
   2. 左半區 (`1280x1080`): 即時 Camera 影像串流與 AI 綠色 Bounding Box 藥丸標記。
   3. 右半區 (`640x1080`): 數位計數面板與實時 NPU 數據分析。
   4. 整合主程式 `src/main.c` 執行流程。
-  5. 執行 CMakeCache.txt 與 CMakeFiles 舊快取清理，避免 CMake 抓取舊絕對路徑。
-- **燒錄檔與 ROM 命名規範**:
-  - 編譯產出 `ITE_NOR.ROM` 後，複製至根目錄命名為 `GW202601_YYYYMMDD_HHMMSS.ROM`，確保燒錄版本追溯。
+  5. 修正平台工具鏈定義為 GPA7 (Generalplus G+IDE for ARM / G+ Code Packer)。
+- **燒錄檔與 Firmware 命名規範**:
+  - 編譯並經 G+ Code Packer 打包產出之 `.bin` 燒錄檔，複製至專案根目錄並命名為：`GPA7_PillCounter_YYYYMMDD_HHMMSS.bin`，供 ISP/SPI Flash/SPINAND 燒錄與版號追溯。
 
 ---
