@@ -1,0 +1,25 @@
+# Large SDK zips and archives
+SDK/**/*.zip
+SDK/**/*.gdb
+*.zip
+*.tar.gz
+
+# Compiled binaries and build outputs
+build/
+bin/
+obj/
+*.o
+*.elf
+*.bin
+*.rom
+*.ROM
+
+# Model binaries
+models/pretrained/*.onnx
+models/pretrained/*.pt
+models/gpdla_compiled/*.gpdla
+
+# Python virtual environment & cache
+__pycache__/
+*.pyc
+.venv/
