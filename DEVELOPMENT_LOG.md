@@ -25,4 +25,14 @@
 - **遭遇問題與解決方案**:
   - 無。
 
+### [2026-07-30] HDMI 雙區域 UI 切分與燒錄檔產出架構 (HDMI Dual-Pane UI & ROM Specs)
+- **變更與新增**:
+  1. 新增 `src/app_hdmi_ui.h` 與 `src/app_hdmi_ui.c` HDMI 雙畫面 layout UI 模組。
+  2. 左半區 (`1280x1080`): 即時 Camera 影像串流與 AI 綠色 Bounding Box 藥丸標記。
+  3. 右半區 (`640x1080`): 數位計數面板與實時 NPU 數據分析。
+  4. 整合主程式 `src/main.c` 執行流程。
+  5. 執行 CMakeCache.txt 與 CMakeFiles 舊快取清理，避免 CMake 抓取舊絕對路徑。
+- **燒錄檔與 ROM 命名規範**:
+  - 編譯產出 `ITE_NOR.ROM` 後，複製至根目錄命名為 `GW202601_YYYYMMDD_HHMMSS.ROM`，確保燒錄版本追溯。
+
 ---
