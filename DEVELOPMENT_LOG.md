@@ -4,6 +4,7 @@
 - **專案名稱**: GPA7 Pill Counter (數藥丸專案)
 - **硬體平台**: GPA7 平台 (搭載 GPDLA NPU 加速器)
 - **SDK 路徑**: `C:\SW code\source code\GPA7_Pill_20260725\SDK`
+- **原廠資料路徑 (海德威)**: `C:\公司\電子元件\海德威GPA7` (包含 Datasheet, ProgrammingGuide, Schematic&PCB, UserGuide 等)
 - **專案根目錄**: `C:\SW code\source code\GPA7_Pill_20260725`
 - **維護者**: MedFlow 軟體團隊
 

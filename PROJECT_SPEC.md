@@ -10,6 +10,7 @@
 - **處理器與 NPU**: GPA7 晶片，整合 GPDLA NPU 加速單元。
 - **SDK 版本**: GPA7 Platform Code Release V1.3.1 / GPDLA SDK V2.0.2.
 - **SDK 路徑**: `C:\SW code\source code\GPA7_Pill_20260725\SDK`
+- **海德威原廠資料**: `C:\公司\電子元件\海德威GPA7` (含 Datasheet, ProgrammingGuide, Schematic&PCB, UserGuide, PlatformCode)
 - **影像輸入規格**: CMOS Camera / USB Video Class (UVC) 輸入，解析度 720P / 1080P。
 
 ---
