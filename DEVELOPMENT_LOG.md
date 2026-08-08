@@ -113,3 +113,18 @@
      - 右側 ($640 	imes 1080$)：LVGL v8.3.4 大字體計數儀表板、NPU 推論時間 (ms) 與 60 FPS 刷新率。
   2. **動態測試控制**: 提供手動增加/減少藥丸按鈕與實時 Console Log。
   3. **啟動捷徑**: 根目錄下雙擊 `simulator/run_simulator.bat` 即可一鍵運行。
+
+
+### [2026-08-08 23:13] 🎨 LVGL UI 自動化工具選型、版本相容性與梯隊備案策略
+
+- **GPA7 SDK 內建 LVGL 版本**: **v8.3.4** (`SDK/application/lvgl/lvgl.h`)
+
+- **工具評估與選型梯隊 (Tool Selection Hierarchy)**:
+  1. **首選推薦 [Choice #1]**: **EEZ Studio (Open-Source)**
+     - **優勢**: 100% 開源免費、無授權/Widget數量限制，原生支援切換 **LVGL v8.3** 導出，C 碼 100% 匹配 GPA7。
+  2. **第二備選 [Fallback #1]**: **SquareLine Studio**
+     - **優勢**: 針對 LVGL v8.2/v8.3 設計，介面精美、C 碼導出相容度高。
+  3. **第三備選 [Fallback #2]**: **GPA7 PC 模擬器 + AI CodeGen (`simulator/sim_gpa7_app.py`)**
+     - **優勢**: 免安裝第三方軟體，由 AI 依據需求精確生成 LVGL v8.3.4 C 代碼並在 PC 模擬器上即時預覽校正。
+
+- **地雷排除**: **禁用 `figma2lvgl` 預設指令**（因其僅支援 LVGL v9+，API 與 GPA7 v8.3.4 不相容）。
