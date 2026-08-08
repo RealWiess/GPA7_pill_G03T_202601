@@ -101,3 +101,15 @@
   - **難易度**: ⭐⭐ (中度)
   - **變動檔案**: `src/main.c`
   - **變動內容**: 將單次推論修改為符合 OpenRTOS 規範的無窮主 Task 迴圈，加入 `vTaskDelay()` / Queue blocked wait，防止 CPU 100% 飢餓與看門狗 (Watchdog) 逾時重啟。
+
+
+### [2026-08-08 22:14] 🖥️ 建立 GPA7 OpenRTOS & LVGL 離線 PC 模擬器 (Desktop Simulator)
+
+- **簡介與效益**:
+  為解決頻繁燒錄 Flash 與在實體板卡上除錯的時間成本，建置 PC 桌面離線模擬器 `simulator/sim_gpa7_app.py`。
+- **模擬器功能**:
+  1. **HDMI 1920x1080 雙畫面模擬**:
+     - 左側 ($1280 	imes 1080$)：相機模擬視訊與 AI 綠色 Bounding Box (置信度、`capsule`/`round`/`oval` 標籤)。
+     - 右側 ($640 	imes 1080$)：LVGL v8.3.4 大字體計數儀表板、NPU 推論時間 (ms) 與 60 FPS 刷新率。
+  2. **動態測試控制**: 提供手動增加/減少藥丸按鈕與實時 Console Log。
+  3. **啟動捷徑**: 根目錄下雙擊 `simulator/run_simulator.bat` 即可一鍵運行。
