@@ -128,3 +128,13 @@
      - **優勢**: 免安裝第三方軟體，由 AI 依據需求精確生成 LVGL v8.3.4 C 代碼並在 PC 模擬器上即時預覽校正。
 
 - **地雷排除**: **禁用 `figma2lvgl` 預設指令**（因其僅支援 LVGL v9+，API 與 GPA7 v8.3.4 不相容）。
+
+
+### [2026-08-08 23:21] 🎉 完成 EEZ Studio v0.29.0 安裝與 GPA7 LVGL v8.3 SOP
+
+- **狀態**: EEZ Studio (v0.29.0) 於開發者 PC 完成安裝。
+- **EEZ Studio 設定規範**:
+  1. Target LVGL Version: **`v8.3`** (相容 GPA7 SDK `LVGL v8.3.4`)
+  2. Resolution: **`1920 x 1080`** (HDMI 雙畫面 Layout)
+  3. 左分頁 (`1280x1080`): 相機視訊與 AI 綠框 overlay 區
+  4. 右分頁 (`640x1080`): LVGL 大字體計數儀表板區
