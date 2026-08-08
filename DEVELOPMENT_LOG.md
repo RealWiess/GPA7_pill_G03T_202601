@@ -138,3 +138,13 @@
   2. Resolution: **`1920 x 1080`** (HDMI 雙畫面 Layout)
   3. 左分頁 (`1280x1080`): 相機視訊與 AI 綠框 overlay 區
   4. 右分頁 (`640x1080`): LVGL 大字體計數儀表板區
+
+
+### [2026-08-08 23:27] 🚨 全系統最高指導原則確立：【AI 自動工作流 (AI Automated Workflow)】列為最高優先
+
+- **決策說明**:
+  廢除中介人工 GUI 軟體 (如 EEZ Studio)，全系統全面貫徹 **【AI 自動工作流 (AI Automated Workflow)】** 為第一優先級 (Top Priority)。
+- **UI 開發 100% 自動化 SOP**:
+  1. **需求與規劃**: 使用者提出 UI 需求 $\rightarrow$ AI 總工程師直接規劃並生成相容 LVGL v8.3.4 的 C 代碼 (`src/app_hdmi_ui.c`)。
+  2. **實時預覽與微調**: AI 背景啟動 PC 模擬器 (`simulator/sim_gpa7_app.py`) 渲染 $1920 \times 1080$ 雙分頁畫面，使用者可在電腦視窗上實時查看並做簡單微調。
+  3. **一鍵導出**: 滿意後 AI 自動寫入 GPA7 專案，進行 CMake 快取清理並歸檔 `GPA7_Pill_YYYYMMDD_HHMM.bin`。
