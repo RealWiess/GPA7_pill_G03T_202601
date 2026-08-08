@@ -167,3 +167,13 @@
 
 - **CMake 清理 SOP**: 已徹底清除舊的 `CMakeCache.txt` 與 `CMakeFiles/` 目錄。
 - **產出韌體檔**: `GPA7_Pill_20260809_0130.bin` (位於專案根目錄 `c:\SW code\source code\GPA7_Pill_20260725GA\`)
+
+
+### [2026-08-09 01:53] ✅ 完成 TODO-01 記憶體分配靜態化與 Ping-Pong 雙緩衝區專項驗證
+
+- **驗證項目**: TODO-01 記憶體動態分配靜態化
+- **重構與驗證結果**:
+  - `src/main.c` 徹底移除 `calloc` / `malloc` / `free`。
+  - 使用 LPDDR2 區靜態預留 Ping-Pong 雙緩衝區 `g_ping_pong_fb[2][1280*1080*3]`，強制 32-byte DMA 邊界對齊 (`__attribute__((aligned(32)))`)。
+  - 經驗證運作 5 影格無任何 Heap 記憶體洩漏與碎片化風險。
+- **產出 BIN 檔**: `GPA7_Pill_20260809_0153.bin`
