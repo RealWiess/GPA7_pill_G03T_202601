@@ -155,3 +155,15 @@
 - **SOP 規範**:
   所有要展示給開發者查看的 UI 預覽圖、截圖、展示腳本或產出檔案，**一律同步複製/導出至桌面目錄**:
   `C:\Users\JOHN_WIESS\Desktop\GPA7_Pill_temp\`
+
+
+### [2026-08-09 01:30] ✅ 完成 4 大高風險待辦事項重構、CMake 快取清理與 BIN 導出
+
+- **完成之待辦事項**:
+  1. **TODO-01 記憶體分配靜態化與 Ping-Pong Buffer 重構**：`src/main.c` 移除 `calloc`，改為 LPDDR2 區 32-byte 邊界對齊之靜態 Dedicated Buffers (`g_ping_pong_fb[2]`)。
+  2. **TODO-02 GPDLAv2 NPU C API 實體 DMA 與量化標頭檔對接**：`src/pill_counter.c` 實現 NPU 32-byte 物理位址對齊與 NMS (IoU >= 0.45, Conf >= 0.45) 算子多類別處理。
+  3. **TODO-03 LVGL 1920x1080 雙畫面 UI 畫布與專用 Task Mutex 鎖**：`src/app_hdmi_ui.c` 實現 1280 視訊區 + 640 統計區 (2X Giant 綠色數位大字 12 + 膠囊/圓片/橢圓分類標籤)，並加裝資源鎖防撕裂。
+  4. **TODO-04 RTOS 主 Task 迴圈與 `vTaskDelay` 看門狗防護**：`src/main.c` 改為 OpenRTOS / FreeRTOS 規範任務迴圈與 `vTaskDelay` 讓出，防止 100% CPU 飢餓與 Watchdog 重啟。
+
+- **CMake 清理 SOP**: 已徹底清除舊的 `CMakeCache.txt` 與 `CMakeFiles/` 目錄。
+- **產出韌體檔**: `GPA7_Pill_20260809_0130.bin` (位於專案根目錄 `c:\SW code\source code\GPA7_Pill_20260725GA\`)
