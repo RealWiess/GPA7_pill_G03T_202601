@@ -36,3 +36,20 @@
   - 編譯並經 G+ Code Packer 打包產出之 `.bin` 燒錄檔，複製至專案根目錄並命名為：`GPA7_PillCounter_YYYYMMDD_HHMMSS.bin`，供 ISP/SPI Flash/SPINAND 燒錄與版號追溯。
 
 ---
+
+
+### [2026-08-08 22:05] 🤖 除錯維護對照清單：當前 AI 模型與韌體 BIN 檔產出規範
+
+- **當前採用的 AI 模型規格 (Model Spec for Debug)**:
+  - **模型名稱**: `MobileNetV2-YOLOv3-Lite` / `YOLOv5n`
+  - **網路組態**: `Training/configs/yolo_pill_mode_b.cfg`
+  - **輸入尺寸**: `320x320x3` (或 `324x324x3`) RGB
+  - **偵測類別**: `0: capsule` (膠囊), `1: round_pill` (圓形錠劑), `2: oval_pill` (橢圓形藥丸)
+  - **NPU 權重標頭檔**: `Output_GPDLA/HW_wt_param_320X320_YOLO_LITE.h` (INT8 量化)
+  - **專案二進位模型檔**: `models/gpdla_compiled/pill_yolov5n.gpdla`
+
+- **韌體 BIN 檔產出與命名 SOP**:
+  - **存放目錄**: `C:\SW code\source code\GPA7_Pill_20260725GA\`
+  - **命名格式**: `GPA7_Pill_YYYYMMDD_HHMM.bin` (例如 `GPA7_Pill_20260808_2146.bin`)
+
+- **GitHub 儲存庫**: [RealWiess/GPA7_pill_G03T_202601](https://github.com/RealWiess/GPA7_pill_G03T_202601)
