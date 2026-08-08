@@ -148,3 +148,10 @@
   1. **需求與規劃**: 使用者提出 UI 需求 $\rightarrow$ AI 總工程師直接規劃並生成相容 LVGL v8.3.4 的 C 代碼 (`src/app_hdmi_ui.c`)。
   2. **實時預覽與微調**: AI 背景啟動 PC 模擬器 (`simulator/sim_gpa7_app.py`) 渲染 $1920 \times 1080$ 雙分頁畫面，使用者可在電腦視窗上實時查看並做簡單微調。
   3. **一鍵導出**: 滿意後 AI 自動寫入 GPA7 專案，進行 CMake 快取清理並歸檔 `GPA7_Pill_YYYYMMDD_HHMM.bin`。
+
+
+### [2026-08-08 23:32] 📁 確立展示與預覽輸出目錄 SOP: `C:\Users\JOHN_WIESS\Desktop\GPA7_Pill_temp`
+
+- **SOP 規範**:
+  所有要展示給開發者查看的 UI 預覽圖、截圖、展示腳本或產出檔案，**一律同步複製/導出至桌面目錄**:
+  `C:\Users\JOHN_WIESS\Desktop\GPA7_Pill_temp\`
