@@ -53,3 +53,18 @@
   - **命名格式**: `GPA7_Pill_YYYYMMDD_HHMM.bin` (例如 `GPA7_Pill_20260808_2146.bin`)
 
 - **GitHub 儲存庫**: [RealWiess/GPA7_pill_G03T_202601](https://github.com/RealWiess/GPA7_pill_G03T_202601)
+
+
+### [2026-08-08 22:10] 🤖 AI 全自動化標註、合成數據擴增 (Synthetic Data) 與訓練管線規劃
+
+- **90%+ AI 自動化範疇**:
+  1. **合成數據生成 (Cut-and-Paste Augmentation)**: 使用 SAM 2 / OpenCV 去背藥丸圖層，由 Python 腳本隨機旋轉貼合至各式背景，邊界框座標 100% 自動精確計算，免人工標註。
+  2. **AI 自動標註 (Auto-Labeling)**: 利用 Grounding DINO / YOLO-World 進行 Zero-Shot 自動標註並匯出 VOC/YOLO 檔。
+  3. **模型訓練與轉檔**: Python 自動化啟動訓練 $\rightarrow$ 導出 ONNX.
+  4. **GPDLA INT8 量化**: 執行 `Quantization/pipeline_gpa7.py` 自動產生 C 標頭檔與 `.gpdla` 檔。
+  5. **韌體打包**: 自動啟動編譯並歸檔為 `GPA7_Pill_YYYYMMDD_HHMM.bin`。
+
+- **5% 人工必要工作 (Human-in-the-Loop)**:
+  1. 首批實體環境藥丸照片拍攝。
+  2. 重疊堆疊與低置信度 (Conf < 0.85) 案例之快速抽檢與微調。
+  3. G-03T 終端真機上電現場驗收。
