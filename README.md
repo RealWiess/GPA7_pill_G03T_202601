@@ -1,10 +1,14 @@
-# GPA7 數藥丸 (Pill Counter) 專案
+# GPA7 數藥丸 (Pill Counter G-03T) 專案
 
-本專案基於 **GPA7 平台 (GPDLA NPU 硬體加速器)** 實作實時藥丸檢測與自動計數系統。
+> 🤖 **本專案由 Google Antigravity AI 系統自動生成與維護**
+> 
+> GitHub 儲存庫：[RealWiess/GPA7_pill_G03T_202601](https://github.com/RealWiess/GPA7_pill_G03T_202601)
+
+本專案基於 **instAI GPA7 平台 (GPDLA NPU 硬體加速器)** 實作實時藥丸檢測、定位與自動計數系統，搭配 HDMI 1920x1080 雙畫面 LVGL UI 顯示。
 
 ## 專案結構
 ```
-C:\SW code\source code\GPA7_Pill_20260725\
+C:\SW code\source code\GPA7_Pill_20260725GA\
 ├── SDK\                      # GPA7 官方 SDK (包含 PlatformCode, ProgrammingGuide 等)
 ├── DEVELOPMENT_LOG.md        # 研發日誌 (記錄歷史修訂、Debug 與設計決策)
 ├── PROJECT_SPEC.md           # 系統規格書與通訊/介面定義
@@ -38,5 +42,5 @@ python scripts/export_onnx_gpa7.py
 ### 3. GPDLA 工具鏈量化 (GPA7 SDK)
 解壓 `SDK/PlatformCode/GPDLA_SDK_V2.0.2_Yolo5n.zip` 並執行模型轉換命令，產生 `.gpdla` 檔置於 `models/gpdla_compiled/`。
 
-### 4. 嵌入式專案編譯 (C/C++)
-將 `src/` 中的檔案整合至 GPA7 Platform Code 工程中編譯 ROM，編譯完成後複製出帶有時間戳記之 ROM 檔 (如 `GW202601_YYYYMMDD_HHMMSS.ROM`)。
+### 4. 嵌入式專案編譯與產出 (C/C++)
+將 `src/` 中的檔案整合至 GPA7 Platform Code 工程中（使用 G+ IDE for ARM）進行編譯打包。編譯與 CodePacker 完成後，複製二進位檔至專案根目錄，並依 SOP 命名為：`GPA7_Pill_YYYYMMDD_HHMM.bin` (例如 `GPA7_Pill_20260808_2146.bin`)。
