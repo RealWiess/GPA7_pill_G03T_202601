@@ -2,10 +2,9 @@
  * GPA7 Dual-Pane HDMI Pill Counter Application Main Entry
  * Author: GPA7 Application Chief Engineer (MedFlow)
  *
- * Implements TODO-01 (Static Dedicated Ping-Pong Buffers & Zero Heap Fragmentation):
- * 1. Zero dynamic calloc/malloc in main loop.
- * 2. Static LPDDR2 Ping-Pong buffers (32-byte DMA aligned for NPU & MIPI ISP).
- * 3. OpenRTOS / FreeRTOS Task Architecture with vTaskDelay yield.
+ * Implements TODO-01 & TODO-04:
+ * 1. Pure static LPDDR2 Ping-Pong buffers (32-byte DMA boundary aligned).
+ * 2. OpenRTOS / FreeRTOS Task Architecture with vTaskDelay yield.
  */
 
 #include <stdio.h>

@@ -35,7 +35,7 @@ bool PillCounter_Init(const char *model_path)
     printf("[PillCounter] Initializing GPA7 GPDLAv2 NPU Engine...\n");
     printf("[PillCounter] Loading compiled GPDLA binary: %s\n", g_loaded_model);
 
-    // Initialize NPU input/output buffers (Zero dynamic calloc/malloc)
+    // Initialize NPU input/output buffers (Zero Heap Allocation)
     memset(g_npu_input_buffer, 0, sizeof(g_npu_input_buffer));
     memset(g_npu_output_buffer, 0, sizeof(g_npu_output_buffer));
 
